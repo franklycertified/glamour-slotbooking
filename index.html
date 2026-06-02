@@ -1,1 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>GLAMOUR REGISTRATION</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
+
+:root{
+--gold:#FFD700;
+--dark:#111111;
+--card:#161616;
+}
+
+.hero{
+min-height:100vh;
+padding:30px 20px;
+background:
+linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
+url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1400');
+background-size:cover;
+background-position:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.logo{
+font-size:32px;
+font-weight:800;
+color:var(--gold);
+margin-bottom:25px;
+}
+
+.logo span{
+display:block;
+font-size:14px;
+color:#fff;
+letter-spacing:3px;
+margin-top:5px;
+}
+
+.hero h1{
+font-size:45px;
+max-width:900px;
+line-height:1.2;
+margin-bottom:20px;
+}
+
+.gold{
+color:var(--gold);
+}
+
+.hero p{
+max-width:800px;
+font-size:18px;
+line-height:1.8;
+color:#d6d6d6;
+margin-bottom:35px;
+}
+
+.btns{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.btn{
+padding:16px 35px;
+border-radius:40px;
+font-weight:700;
+text-decoration:none;
+transition:.3s;
+}
+
+.btn-primary{
+background:var(--gold);
+color:black;
+box-shadow:0 0 25px rgba(255,215,0,.4);
+}
+
+.btn-primary:hover{
+transform:translateY(-3px);
+}
+
+.btn-secondary{
+border:2px solid var(--gold);
+color:var(--gold);
+}
+
+.stats{
+padding:70px 20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+max-width:1200px;
+margin:auto;
+}
+
+.stat{
+background:var(--card);
+padding:30px;
+border-radius:20px;
+text-align:center;
+border:1px solid rgba(255,215,0,.2);
+}
+
+.stat h2{
+font-size:35px;
+color:var(--gold);
+margin-bottom:10px;
+}
+
+.stat p{
+color:#bbb;
+}
+
+.live-feed{
+background:#0d0d0d;
+padding:18px;
+overflow:hidden;
+border-top:1px solid rgba(255,215,0,.2);
+border-bottom:1px solid rgba(255,215,0,.2);
+}
+
+.ticker{
+white-space:nowrap;
+display:inline-block;
+animation:scroll 40s linear infinite;
+color:#e5e5e5;
+font-size:15px;
+}
+
+@keyframes scroll{
+0%{transform:translateX(100%)}
+100%{transform:translateX(-100%)}
+}
+
+.section-title{
+text-align:center;
+font-size:38px;
+margin-bottom:20px;
+}
+
+.why{
+padding:90px 20px;
+}
+
+.why-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+max-width:1200px;
+margin:auto;
+}
+
+.card{
+background:var(--card);
+padding:30px;
+border-radius:20px;
+border:1px solid rgba(255,215,0,.15);
+}
+
+.card h3{
+color:var(--gold);
+margin-bottom:15px;
+}
+
+.card p{
+color:#cfcfcf;
+line-height:1.8;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:32px;
+}
+
+.hero p{
+font-size:15px;
+}
+
+.logo{
+font-size:24px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="logo">
+💎 GLAMOUR REGISTRATION
+<span>PREMIUM MEMBER PLATFORM</span>
+</div>
+
+<h1>
+Turn Your Daily Activities Into
+<span class="gold">Opportunities</span>
+</h1>
+
+<p>
+Create your account, activate your membership, connect with people around the world, and access premium platform features through a secure dashboard.
+</p>
+
+<div class="btns">
+
+<a href="#register" class="btn btn-primary">
+CREATE ACCOUNT
+</a>
+
+<a href="#login" class="btn btn-secondary">
+LOGIN
+</a>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stat">
+<h2>5,000+</h2>
+<p>Registered Members</p>
+</div>
+
+<div class="stat">
+<h2>2,500+</h2>
+<p>Activated Accounts</p>
+</div>
+
+<div class="stat">
+<h2>20+</h2>
+<p>Countries</p>
+</div>
+
+<div class="stat">
+<h2>24/7</h2>
+<p>Support Access</p>
+</div>
+
+</section>
+
+<div class="live-feed">
+
+<div class="ticker">
+
+Chinedu A. • Joined Glamour Registration •
+Amina B. • Joined Glamour Registration •
+David O. • Joined Glamour Registration •
+Grace N. • Joined Glamour Registration •
+Michael E. • Joined Glamour Registration •
+Sarah K. • Joined Glamour Registration •
+Emmanuel T. • Joined Glamour Registration •
+Esther A. • Joined Glamour Registration •
+
+</div>
+
+</div>
+
+<section class="why">
+
+<h2 class="section-title">
+Why Choose <span class="gold">Glamour?</span>
+</h2>
+
+<div class="why-grid">
+
+<div class="card">
+<h3>📱 Mobile Friendly</h3>
+<p>
+Access your account from any smartphone, tablet or desktop device.
+</p>
+</div>
+
+<div class="card">
+<h3>⚡ Fast Activation</h3>
+<p>
+Complete registration and activate your account through a simple process.
+</p>
+</div>
+
+<div class="card">
+<h3>🔒 Secure Access</h3>
+<p>
+Protected login system and secure member dashboard.
+</p>
+</div>
+
+<div class="card">
+<h3>💬 WhatsApp Support</h3>
+<p>
+Get assistance quickly through our dedicated WhatsApp support channel.
+</p>
+</div>
+
+</div>
+
+</section>
+
+</body>
+  </html>
