@@ -1,6 +1,168 @@
-<h1>Glamour</h1><p>Good day,</p><h2>
-Hi, <span id="username">Member</span> 👋
-</h2><div class="balance-card"><div class="badge">
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glamour Dashboard</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(
+180deg,
+#111111 0%,
+#070707 50%,
+#000000 100%
+);
+color:white;
+padding:20px;
+}
+
+.header{
+margin-bottom:25px;
+}
+
+.header h1{
+color:#FFD700;
+font-size:30px;
+font-weight:800;
+}
+
+.header p{
+color:#aaa;
+margin-top:5px;
+}
+
+.header h2{
+margin-top:5px;
+font-size:24px;
+}
+
+.balance-card{
+background:linear-gradient(
+135deg,
+#FFD700,
+#D4AF37
+);
+padding:25px;
+border-radius:25px;
+color:#111;
+margin-bottom:20px;
+box-shadow:0 15px 35px rgba(255,215,0,.25);
+}
+
+.badge{
+display:inline-block;
+background:black;
+color:#FFD700;
+padding:6px 12px;
+border-radius:20px;
+font-size:12px;
+font-weight:700;
+margin-bottom:15px;
+}
+
+.balance-card h3{
+font-size:14px;
+margin-bottom:10px;
+}
+
+.balance{
+font-size:38px;
+font-weight:800;
+}
+
+.card-number{
+margin-top:10px;
+font-size:14px;
+}
+
+.actions{
+display:flex;
+gap:10px;
+margin-bottom:20px;
+}
+
+.actions a{
+flex:1;
+text-decoration:none;
+background:#181818;
+padding:15px;
+border-radius:15px;
+text-align:center;
+color:#FFD700;
+font-weight:600;
+border:1px solid rgba(255,215,0,.2);
+}
+
+.warning{
+background:#181818;
+border:1px solid rgba(255,215,0,.15);
+padding:18px;
+border-radius:18px;
+margin-bottom:25px;
+}
+
+.warning h3{
+color:#FFD700;
+margin-bottom:10px;
+}
+
+.section-title{
+margin-bottom:15px;
+font-size:22px;
+color:#FFD700;
+}
+
+.module{
+background:#141414;
+border:1px solid rgba(255,215,0,.1);
+padding:18px;
+border-radius:16px;
+margin-bottom:12px;
+}
+
+.module strong{
+display:block;
+margin-bottom:5px;
+}
+
+.referral{
+background:#181818;
+padding:20px;
+border-radius:18px;
+margin-top:25px;
+}
+
+.referral h3{
+color:#FFD700;
+margin-bottom:10px;
+}
+
+.referral input{
+width:100%;
+padding:15px;
+border:none;
+border-radius:10px;
+background:#0d0d0d;
+color:white;
+}
+
+.ai-btn{
+margin-top:20px;
+background:#FFD700;
+color:black;
+padding:15px;
+border-radius:50px;
+text-align:center;
+font-weight:700;
+}
+
+</style></head><body><div class="header"><h1>Glamour</h1><p>Good day,</p><h2>Hi, <span id="username">Member</span> 👋</h2></div><div class="balance-card"><div class="badge">
 PREMIUM
 </div><h3>Total Balance</h3><div class="balance">
 ₦12,000.00
@@ -14,42 +176,44 @@ PREMIUM
 
 </div><div class="warning"><h3>🔒 Account Not Activated</h3><p>
 Pay the one-time ₦14,000 fee to unlock all modules and start earning instantly.
-</p></div><h2>EARNING MODULES</h2><div class="module">
-🎥 Glam FaceTime
-<span>€2 / hour</span>
+</p></div><h2 class="section-title">
+EARNING MODULES
+</h2><div class="module">
+<strong>🎥 Glam FaceTime</strong>
+Chat with Europeans, earn per session • €2/hour
 </div><div class="module">
-✍️ Glam Script2Cash
-<span>€2 / script</span>
+<strong>✍️ Glam Script2Cash</strong>
+Write scripts for content creators • €2/script
 </div><div class="module">
-📱 GlamStatus
-<span>€0.5 / view</span>
+<strong>📱 GlamStatus</strong>
+Post like WhatsApp Status • €0.5/view
 </div><div class="module">
-🌙 Glam DarkMode
-<span>€2 extra/hr</span>
+<strong>🌙 Glam DarkMode</strong>
+Earn extra while Europe is awake • €2/hr
 </div><div class="module">
-🗣️ Glam Lingua
-<span>€2 / hour</span>
+<strong>🗣️ Glam Lingua</strong>
+Teach local languages • €2/hour
 </div><div class="module">
-🍲 Glam Cuisine
-<span>€3 / recipe</span>
+<strong>🍲 Glam Cuisine</strong>
+Share recipes • €3/recipe
 </div><div class="module">
-📡 Glam Realtime
-<span>₦3,000 / 15min</span>
+<strong>📡 Glam Realtime</strong>
+Share your lifestyle • ₦3,000/15min
 </div><div class="module">
-🎙️ Glam VoiceVault
-<span>€2 / listen</span>
+<strong>🎙️ Glam VoiceVault</strong>
+Earn from voice recordings • €2/listen
 </div><div class="module">
-💼 GlamWorks
-<span>£9 / hour</span>
+<strong>💼 GlamWorks</strong>
+Remote jobs • £9/hour
 </div><div class="module">
-🏃 Glam Fitness
-<span>₦500 / km</span>
-</div><div class="referral-box"><h3>YOUR PRIVATE NETWORK LINK</h3><input
+<strong>🏃 Glam Fitness</strong>
+Walk and earn • ₦500/km
+</div><div class="referral"><h3>YOUR PRIVATE NETWORK LINK</h3><input
 type="text"
-id="referralLink"
 value="Your referral link will appear here"
 readonly>
 
-</div><div class="ai-button">
+</div><div class="ai-btn">
 Ask AI
-</div>
+</div></body>
+</html>
