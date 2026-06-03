@@ -1,1 +1,118 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Account - Glamour Registration</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><style>
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#050505;
+color:white;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:30px;
+}
+
+.container{
+width:100%;
+max-width:700px;
+background:#111;
+padding:40px;
+border-radius:25px;
+border:1px solid rgba(255,215,0,.2);
+}
+
+.logo{
+text-align:center;
+font-size:30px;
+font-weight:800;
+color:#FFD700;
+margin-bottom:10px;
+}
+
+.subtitle{
+text-align:center;
+color:#aaa;
+margin-bottom:35px;
+}
+
+input,
+select{
+width:100%;
+padding:16px;
+margin-bottom:15px;
+border:none;
+border-radius:12px;
+background:#1d1d1d;
+color:white;
+font-size:15px;
+}
+
+input:focus,
+select:focus{
+outline:none;
+border:1px solid #FFD700;
+}
+
+button{
+width:100%;
+padding:16px;
+border:none;
+border-radius:50px;
+background:#FFD700;
+color:black;
+font-weight:700;
+font-size:16px;
+cursor:pointer;
+}
+
+.login-link{
+text-align:center;
+margin-top:20px;
+}
+
+.login-link a{
+color:#FFD700;
+text-decoration:none;
+}
+
+.notice{
+background:#181818;
+padding:15px;
+border-radius:12px;
+margin-bottom:20px;
+font-size:14px;
+line-height:1.6;
+color:#ccc;
+}
+
+</style></head><body><div class="container"><div class="logo">
+💎 GLAMOUR REGISTRATION
+</div><p class="subtitle">
+Create your account to continue
+</p><div class="notice">
+Please provide accurate information. Your details will be used for account verification and support.
+</div><form><input type="text" placeholder="Full Name" required><input type="text" placeholder="Username" required><input type="email" placeholder="Email Address" required><input type="tel" placeholder="Phone Number" required><select required>
+<option>Select Country</option>
+<option>Nigeria</option>
+<option>Ghana</option>
+<option>Kenya</option>
+<option>South Africa</option>
+<option>Uganda</option>
+<option>Cameroon</option>
+<option>Other</option>
+</select><input type="text" placeholder="Referral Code (Optional)"><input type="password" placeholder="Password" required><input type="password" placeholder="Confirm Password" required><button type="submit">
+CREATE ACCOUNT
+</button></form><div class="login-link">
+Already have an account?
+<a href="login.html">Login Here</a>
+</div></div></body>
+</html>
