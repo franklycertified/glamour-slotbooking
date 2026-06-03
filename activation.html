@@ -1,190 +1,57 @@
-<!DOCTYPE html><html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Glamour Secure Payment</title><style>
+<div id="activatePage"><h2>🔒 Activate Your Account</h2><p>Unlock all 10 earning modules and withdraw instantly.</p><br><p>✓ ₦12,000 instant bonus sent to your bank</p><p>✓ Earn ₦3,000 every 15 minutes of activity</p><p>✓ Access all 10 earning modules immediately</p><p>✓ €6 credit bonus (withdrawable)</p><p>✓ No withdrawal delays — anytime, any bank</p><br><h3>One-time activation fee</h3><h1>₦14,000</h1><button onclick="showPayment()">
+Activate Now →
+</button><br><br>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
-}
+<a href="dashboard.html">
+Maybe later
+</a></div>
+<div id="paymentPage" style="display:none;"><h1>Glamour</h1><h2>SECURE PAYMENT</h2><p>Complete Your Payment</p><p>Activating: Glam Premium Pass</p><h1>₦14,000</h1><h2 id="paymentTimer">5:00</h2><h3>PalmPay</h3><p>Account Number</p>
+<strong>8161380755</strong><p>Account Name</p>
+<strong>NZEKWE JULIET</strong><br><br>
 
-body{
-background:linear-gradient(180deg,#111,#050505,#000);
-color:white;
-padding:20px;
-}
-
-.container{
-max-width:600px;
-margin:auto;
-}
-
-.logo{
-font-size:32px;
-font-weight:800;
-color:#FFD700;
-margin-bottom:20px;
-}
-
-.card{
-background:#121212;
-border:1px solid rgba(255,215,0,.15);
-padding:25px;
-border-radius:20px;
-margin-bottom:20px;
-}
-
-.title{
-font-size:28px;
-font-weight:700;
-margin-bottom:10px;
-}
-
-.gold{
-color:#FFD700;
-}
-
-.amount{
-font-size:42px;
-font-weight:800;
-color:#FFD700;
-margin-top:10px;
-}
-
-.timer{
-font-size:40px;
-font-weight:800;
-color:#FFD700;
-margin-top:10px;
-}
-
-.bank{
-background:#1a1a1a;
-padding:18px;
-border-radius:15px;
-margin-top:15px;
-}
-
-.bank h3{
-color:#FFD700;
-margin-bottom:10px;
-}
-
-.btn{
-display:block;
-width:100%;
-padding:16px;
-text-align:center;
-text-decoration:none;
-border-radius:50px;
-font-weight:700;
-margin-top:20px;
-border:none;
-cursor:pointer;
-}
-
-.activate{
-background:#FFD700;
-color:black;
-}
-
-.whatsapp{
-background:#25D366;
-color:white;
-display:none;
-}
-
-.proof{
-display:none;
-text-align:center;
-}
-
-.small{
-color:#aaa;
-margin-top:10px;
-line-height:1.6;
-}
-
-</style></head><body><div class="container"><div class="logo">
-Glamour
-</div><div id="paymentSection"><div class="card"><div class="title">
-SECURE PAYMENT
-</div><p>Complete Your Payment</p><br><p>Activating: <span class="gold">Glam Premium Pass</span></p><br><p>Amount to Pay</p><div class="amount">
-₦14,000
-</div><br><p>Time Remaining</p><div class="timer" id="paymentTimer">
-5:00
-</div></div><div class="card"><p>Transfer ₦14,000 to any of the accounts below</p><div class="bank"><h3>PalmPay — Option 1</h3><p>Account Number</p>
-<strong>8161380755</strong><br><br>
-
-<p>Account Name</p>
-<strong>NZEKWE JULIET</strong></div><div class="bank"><h3>MONIEPOINT — Option 2</h3><p>Account Number</p>
-<strong>7075742914</strong><br><br>
-
-<p>Account Name</p>
-<strong>NZEKWE FRANK MAKUOCHUKWU</strong></div><p class="small">
-After transferring, tap the button below and send your receipt on WhatsApp.
-</p><button class="btn activate" onclick="paymentMade()">
+<h3>MONIEPOINT</h3><p>Account Number</p>
+<strong>7075742914</strong><p>Account Name</p>
+<strong>NZEKWE FRANK MAKUOCHUKWU</strong><br><button onclick="paymentMade()">
 I've Made Payment
-</button></div></div><div id="proofSection" class="proof"><div class="card"><h2>Payment Verification</h2><p>
-Preparing secure proof submission...
-</p><br><div class="timer" id="proofCountdown">
-10
-</div><p class="small">
-Please wait while we prepare your WhatsApp verification channel.
-</p><a
+</button></div>
+<div id="proofPage" style="display:none;"><h2>Verification In Progress</h2><h1 id="proofCountdown">10</h1><a
 id="whatsappBtn"
-class="btn whatsapp"
-href="https://wa.me/2348161380755?text=Hello%20Admin,%0A%0AI%20have%20successfully%20completed%20my%20Glamour%20Premium%20activation%20payment.%0A%0AKindly%20verify%20my%20payment%20and%20activate%20my%20account.%0A%0AI%20have%20attached%20my%20payment%20receipt%20below%20for%20confirmation.%0A%0AThank%20you."
+style="display:none;"
+href="https://wa.me/2348161380755?text=Hello%20Admin,%20I%20have%20successfully%20completed%20my%20Glamour%20Premium%20activation%20payment.%20Kindly%20verify%20my%20payment%20and%20activate%20my%20account."
 target="_blank">
 
 Send Proof via WhatsApp
 
-</a></div></div></div><script>
+</a></div>
+<script>
 
-let timeLeft = 300;
+function showPayment(){
 
-const timer = setInterval(() => {
+document.getElementById("activatePage").style.display="none";
 
-let minutes = Math.floor(timeLeft / 60);
-let seconds = timeLeft % 60;
-
-document.getElementById("paymentTimer").innerHTML =
-minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-
-timeLeft--;
-
-if(timeLeft < 0){
-
-clearInterval(timer);
-
-document.getElementById("paymentTimer").innerHTML = "Expired";
+document.getElementById("paymentPage").style.display="block";
 
 }
-
-},1000);
 
 function paymentMade(){
 
-document.getElementById("paymentSection").style.display = "none";
+document.getElementById("paymentPage").style.display="none";
 
-document.getElementById("proofSection").style.display = "block";
+document.getElementById("proofPage").style.display="block";
 
-let wait = 10;
+let wait=10;
 
-const countdown = setInterval(() => {
+const countdown=setInterval(()=>{
 
-document.getElementById("proofCountdown").innerHTML = wait;
+document.getElementById("proofCountdown").innerHTML=wait;
 
 wait--;
 
-if(wait < 0){
+if(wait<0){
 
 clearInterval(countdown);
 
-document.getElementById("whatsappBtn").style.display = "block";
+document.getElementById("whatsappBtn").style.display="block";
 
 }
 
@@ -192,5 +59,4 @@ document.getElementById("whatsappBtn").style.display = "block";
 
 }
 
-</script></body>
-</html>
+</script>
