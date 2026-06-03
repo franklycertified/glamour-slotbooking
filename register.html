@@ -34,10 +34,20 @@ color:#FFD700;
 margin-bottom:10px;
 }
 
-.subtitle{
+.hero-text{
 text-align:center;
-color:#aaa;
 margin-bottom:25px;
+}
+
+.hero-text h2{
+color:#FFD700;
+font-size:28px;
+margin-bottom:10px;
+}
+
+.hero-text p{
+color:#ccc;
+line-height:1.7;
 }
 
 .notice{
@@ -61,16 +71,26 @@ color:white;
 font-size:15px;
 }
 
-button{
-width:100%;
-padding:16px;
-border:none;
-border-radius:50px;
-background:#FFD700;
-color:black;
+.plan-box{
+background:linear-gradient(135deg,#FFD700,#d4af37);
+padding:25px;
+border-radius:18px;
+margin-bottom:20px;
+color:#111;
+box-shadow:0 10px 25px rgba(255,215,0,.25);
+}
+
+.plan-title{
+font-size:13px;
 font-weight:700;
-font-size:16px;
-cursor:pointer;
+letter-spacing:2px;
+margin-bottom:10px;
+}
+
+.plan-price{
+font-size:38px;
+font-weight:800;
+margin-top:10px;
 }
 
 .unlock-box{
@@ -93,6 +113,18 @@ line-height:2;
 color:#ddd;
 }
 
+button{
+width:100%;
+padding:16px;
+border:none;
+border-radius:50px;
+background:#FFD700;
+color:black;
+font-weight:700;
+font-size:16px;
+cursor:pointer;
+}
+
 .login-link{
 text-align:center;
 margin-top:20px;
@@ -103,12 +135,14 @@ color:#FFD700;
 text-decoration:none;
 }
 
-</style></head>
-<body><div class="container"><div class="logo">
+</style></head><body><div class="container"><div class="logo">
 💎 GLAMOUR REGISTRATION
-</div><p class="subtitle">
-Create your account to continue
-</p><div class="notice">
+</div><div class="hero-text">
+<h2>Join 12,000+ creators earning on Glamour</h2>
+<p>
+Create your account today and begin your onboarding process.
+</p>
+</div><div class="notice">
 Please provide accurate information. Your details will be used for account verification and support.
 </div><form><input type="text" placeholder="Full Name" required><input type="text" placeholder="Username" required><input type="email" placeholder="Email Address" required><input type="tel" placeholder="Phone Number" required><select required>
 <option>Select Country</option>
@@ -119,7 +153,15 @@ Please provide accurate information. Your details will be used for account verif
 <option>Uganda</option>
 <option>Cameroon</option>
 <option>Other</option>
-</select><input type="text" placeholder="Referral Code (Optional)"><input type="password" placeholder="Password" required><input type="password" placeholder="Confirm Password" required><div class="unlock-box"><h3>🎁 WHAT YOU UNLOCK</h3><ul>
+</select><input type="text" placeholder="Referral Code (Optional)"><input type="password" placeholder="Password" required><input type="password" placeholder="Confirm Password" required><div class="plan-box"><div class="plan-title">
+SELECTED PLAN
+</div><h2>Glamour Premium</h2><p>
+All 10 modules · Instant ₦12,000 bonus
+</p><div class="plan-price">
+₦14,000
+</div><p>
+One-time fee
+</p></div><div class="unlock-box"><h3>🎁 WHAT YOU UNLOCK</h3><ul>
 <li>₦12,000 instant bonus sent to your bank</li>
 <li>Earn ₦3,000 every 15 minutes of activity</li>
 <li>Script writing, lifestyle videos, language teaching</li>
