@@ -144,7 +144,7 @@ Create your account today and begin your onboarding process.
 </p>
 </div><div class="notice">
 Please provide accurate information. Your details will be used for account verification and support.
-</div><form><input type="text" placeholder="Full Name" required><input type="text" placeholder="Username" required><input type="email" placeholder="Email Address" required><input type="tel" placeholder="Phone Number" required><select required>
+</div><form onsubmit="registerUser(event)"><input type="text" id="fullname" placeholder="Full Name" required><input type="text" id="username" placeholder="Username" required><input type="email" placeholder="Email Address" required><input type="tel" placeholder="Phone Number" required><select required>
 <option>Select Country</option>
 <option>Nigeria</option>
 <option>Ghana</option>
@@ -169,8 +169,36 @@ One-time fee
 <li>No withdrawal delays — anytime, any bank</li>
 </ul></div><button type="submit">
 CREATE ACCOUNT
-</button></form><div class="login-link">
-Already have an account?
-<a href="login.html">Login Here</a>
-</div></div></body>
+</button></form><div class="login-link">Already have an account?
+
+<a href="login.html">
+Login Here
+</a></div></div><script>
+
+function registerUser(event){
+
+event.preventDefault();
+
+const fullName =
+document.getElementById("fullname").value;
+
+const username =
+document.getElementById("username").value;
+
+localStorage.setItem(
+"glamourUser",
+fullName
+);
+
+localStorage.setItem(
+"glamourUsername",
+username
+);
+
+window.location.href =
+"dashboard.html";
+
+}
+
+</script></body>
 </html>
