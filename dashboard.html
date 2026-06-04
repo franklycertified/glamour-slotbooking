@@ -3,6 +3,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Glamour Dashboard</title><style>
+
 *{
 margin:0;
 padding:0;
@@ -17,9 +18,20 @@ padding:20px;
 }
 
 .logo{
-font-size:32px;
+font-size:34px;
 font-weight:800;
 color:#FFD700;
+margin-bottom:20px;
+}
+
+.greeting{
+color:#aaa;
+margin-bottom:5px;
+}
+
+.username{
+font-size:28px;
+font-weight:700;
 margin-bottom:20px;
 }
 
@@ -29,12 +41,24 @@ color:black;
 padding:25px;
 border-radius:25px;
 margin-bottom:20px;
+box-shadow:0 10px 30px rgba(255,215,0,.25);
+}
+
+.badge{
+display:inline-block;
+background:black;
+color:#FFD700;
+padding:6px 12px;
+border-radius:30px;
+font-size:12px;
+font-weight:700;
+margin-bottom:10px;
 }
 
 .balance{
-font-size:38px;
+font-size:40px;
 font-weight:800;
-margin-top:10px;
+margin:10px 0;
 }
 
 .actions{
@@ -46,12 +70,13 @@ margin-bottom:20px;
 .actions a{
 flex:1;
 background:#181818;
+border:1px solid rgba(255,215,0,.15);
 color:#FFD700;
 text-decoration:none;
 text-align:center;
 padding:15px;
 border-radius:15px;
-border:1px solid rgba(255,215,0,.15);
+font-weight:600;
 }
 
 .card{
@@ -71,33 +96,137 @@ background:#151515;
 padding:15px;
 border-radius:15px;
 margin-bottom:10px;
+border:1px solid rgba(255,215,0,.08);
 }
-</style></head><body><div class="logo">Glamour</div><p>Good day,</p><h2>Hi, Member 👋</h2><br><div class="balance-card"><p>PREMIUM</p><h3>Total Balance</h3><div class="balance">
+
+.module-title{
+font-weight:600;
+margin-bottom:5px;
+}
+
+.ref-link{
+background:#1c1c1c;
+padding:12px;
+border-radius:10px;
+word-break:break-all;
+margin-top:10px;
+}
+
+.copy-btn{
+width:100%;
+margin-top:15px;
+padding:14px;
+background:#FFD700;
+color:black;
+border:none;
+border-radius:40px;
+font-weight:700;
+cursor:pointer;
+}
+
+</style></head><body><div class="logo">
+Glamour
+</div><p class="greeting">
+Good day,
+</p><h2 class="username" id="welcomeUser">
+Hi, Member 👋
+</h2><div class="balance-card"><div class="badge">
+PREMIUM
+</div><h3>Total Balance</h3><div class="balance">
 ₦12,000.00
-</div><p>•••• •••• 4782</p></div><div class="actions"><a href="activation.html">⚡ Activate</a>
-
-<a href="activation.html">💸 Withdraw</a>
-
-<a href="activation.html">📋 History</a>
-
-</div><div class="card"><h3 class="gold">
+</div><p>•••• •••• 4782</p></div><div class="actions"><a href="activation.html">
+⚡ Activate
+</a><a href="activation.html">
+💸 Withdraw
+</a><a href="activation.html">
+📋 History
+</a></div><div class="card"><h3 class="gold">
 🔒 Account Not Activated
 </h3><br><p>
 Pay the one-time ₦14,000 fee to unlock all modules and start earning instantly.
-</p></div><h2 class="gold">
+</p></div><br><h2 class="gold">
 EARNING MODULES
-</h2><br><div class="module">🎥 Glam FaceTime — €2/hour</div>
-<div class="module">✍️ Glam Script2Cash — €2/script</div>
-<div class="module">📱 GlamStatus — €0.5/view</div>
-<div class="module">🌙 Glam DarkMode — €2/hour</div>
-<div class="module">🗣️ Glam Lingua — €2/hour</div>
-<div class="module">🍲 Glam Cuisine — €3/recipe</div>
-<div class="module">📡 Glam Realtime — ₦3,000/15min</div>
-<div class="module">🎙️ Glam VoiceVault — €2/listen</div>
-<div class="module">💼 GlamWorks — £9/hour</div>
-<div class="module">🏃 Glam Fitness — ₦500/km</div><br><div class="card"><h3 class="gold">
+</h2><br><div class="module">
+<div class="module-title">🎥 Glam FaceTime</div>
+Chat with Europeans, earn per session<br>
+€2 / hour
+</div><div class="module">
+<div class="module-title">✍️ Glam Script2Cash</div>
+Write scripts for content creators<br>
+€2 / script
+</div><div class="module">
+<div class="module-title">📱 GlamStatus</div>
+Post like WhatsApp Status, earn per view<br>
+€0.5 / view
+</div><div class="module">
+<div class="module-title">🌙 Glam DarkMode</div>
+Earn extra while Europe is awake<br>
+€2 extra/hr
+</div><div class="module">
+<div class="module-title">🗣️ Glam Lingua</div>
+Teach your local language to Europeans<br>
+€2 / hour
+</div><div class="module">
+<div class="module-title">🍲 Glam Cuisine</div>
+Cook local dishes, earn per recipe shared<br>
+€3 / recipe
+</div><div class="module">
+<div class="module-title">📡 Glam Realtime</div>
+Share your daily vibe and get paid<br>
+₦3,000 / 15min
+</div><div class="module">
+<div class="module-title">🎙️ Glam VoiceVault</div>
+Record opinions and earn royalties<br>
+€2 / listen
+</div><div class="module">
+<div class="module-title">💼 GlamWorks</div>
+Remote work for European companies<br>
+£9 / hour
+</div><div class="module">
+<div class="module-title">🏃 Glam Fitness</div>
+Walk, run, stay active and earn<br>
+₦500 / km
+</div><br><div class="card"><h3 class="gold">
 YOUR PRIVATE NETWORK LINK
-</h3><br><p>
+</h3><div class="ref-link" id="refLink">
 glamour.app/?ref=member001
-</p></div></body>
+</div><button class="copy-btn" onclick="copyReferral()">
+Copy Referral Link
+</button></div><script>
+
+const user =
+localStorage.getItem("glamourUser");
+
+const username =
+localStorage.getItem("glamourUsername");
+
+if(user){
+
+document.getElementById("welcomeUser").innerHTML =
+"Hi, " + user + " 👋";
+
+}
+
+if(username){
+
+document.getElementById("refLink").innerHTML =
+"glamour.app/?ref=" + username;
+
+}
+
+function copyReferral(){
+
+const username =
+localStorage.getItem("glamourUsername") || "member001";
+
+const link =
+"glamour.app/?ref=" + username;
+
+navigator.clipboard.writeText(link);
+
+alert("Referral link copied successfully!");
+
+}
+
+</script></body>
 </html>
