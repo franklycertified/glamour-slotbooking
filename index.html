@@ -209,8 +209,69 @@ font-size:24px;
 }
 
 </style>
+  .live-popup{
+position:fixed;
+left:20px;
+bottom:20px;
+width:320px;
+background:linear-gradient(135deg,#111,#1a1a1a);
+border:1px solid rgba(255,215,0,.25);
+border-radius:18px;
+padding:15px;
+z-index:9999;
+display:none;
+box-shadow:0 0 25px rgba(255,215,0,.25);
+animation:slideUp .5s ease;
+}
+.live-title{color:#FFD700;font-weight:700;font-size:13px;}
+.live-time{color:#999;font-size:12px;margin-top:5px;}
+@keyframes slideUp{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
+}
 </head>
+<div class="live-popup" id="livePopup">
+<div class="live-title">🔥 Recent Activations</div>
+<div id="popupMessage"></div>
+<div class="live-time" id="popupTime"></div>
+</div>
 
+<script>
+const activations=[
+"Chinedu from Lagos activated Premium",
+"Amina from Abuja joined Glamour",
+"David from Port Harcourt activated account",
+"Grace from Enugu upgraded membership",
+"Michael from Benin joined Glamour",
+"Sarah from Owerri activated account",
+"Emmanuel from Uyo upgraded Premium",
+"Esther from Asaba joined Glamour",
+"Victor from Aba activated account",
+"Mercy from Warri upgraded membership",
+"Daniel from Kano joined Glamour",
+"Jennifer from Calabar activated account",
+"Samuel from Jos upgraded Premium",
+"Precious from Lokoja joined Glamour",
+"Kingsley from Onitsha activated account",
+"Blessing from Ibadan upgraded membership",
+"Peter from Ilorin joined Glamour",
+"Ruth from Akure activated account",
+"Kelvin from Kaduna upgraded Premium",
+"Joy from Abeokuta joined Glamour"
+];
+
+function showActivation(){
+const msg=activations[Math.floor(Math.random()*activations.length)];
+document.getElementById("popupMessage").innerHTML=msg;
+document.getElementById("popupTime").innerHTML=
+(Math.floor(Math.random()*30)+1)+" minutes ago";
+const box=document.getElementById("livePopup");
+box.style.display="block";
+setTimeout(()=>{box.style.display="none"},5000);
+}
+setTimeout(showActivation,3000);
+setInterval(showActivation,10000);
+</script>
 <body>
 
 <section class="hero">
