@@ -1,9 +1,11 @@
-<!DOCTYPE html><html>
+<!DOCTYPE html>
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Glamour Dashboard</title><style>
+<title>Glamour Dashboard</title>
 
+<style>
 *{
 margin:0;
 padding:0;
@@ -91,6 +93,50 @@ border:1px solid rgba(255,215,0,.1);
 color:#FFD700;
 }
 
+/* CONVERTER */
+.converter-card{
+background:#151515;
+padding:20px;
+border-radius:18px;
+margin-bottom:20px;
+border:1px solid rgba(255,215,0,.15);
+box-shadow:0 0 20px rgba(255,215,0,.08);
+}
+
+.converter-card input,
+.converter-card select{
+width:100%;
+padding:14px;
+margin-top:10px;
+background:#1c1c1c;
+border:1px solid rgba(255,215,0,.15);
+border-radius:12px;
+color:white;
+font-size:15px;
+outline:none;
+}
+
+.convert-btn{
+width:100%;
+margin-top:12px;
+padding:14px;
+background:linear-gradient(135deg,#FFD700,#D4AF37);
+color:black;
+border:none;
+border-radius:40px;
+font-weight:700;
+cursor:pointer;
+}
+
+.result{
+margin-top:15px;
+text-align:center;
+font-size:20px;
+font-weight:700;
+color:#FFD700;
+}
+
+/* modules */
 .module{
 background:#151515;
 padding:15px;
@@ -123,111 +169,140 @@ border-radius:40px;
 font-weight:700;
 cursor:pointer;
 }
+</style>
+</head>
 
-</style></head><body><div class="logo">
-Glamour
-</div><p class="greeting">
-Good day,
-</p><h2 class="username" id="welcomeUser">
-Hi, Member 👋
-</h2><div class="balance-card"><div class="badge">
-PREMIUM
-</div><h3>Total Balance</h3><div class="balance">
-₦14,000.00
-</div><p>•••• •••• 4782</p></div><div class="actions"><a href="activation.html">
-⚡ Activate
-</a><a href="activation.html">
-💸 Withdraw
-</a><a href="activation.html">
-📋 History
-</a></div><div class="card"><h3 class="gold">
-🔒 Account Not Activated
-</h3><br><p>
-Pay the one-time ₦14,000 fee to unlock all modules and start earning instantly.
-</p></div><br><h2 class="gold">
-EARNING MODULES
-</h2><br><div class="module">
-<div class="module-title">🎥 Glam FaceTime</div>
-Chat with Europeans, earn per session<br>
-€2 / hour
-</div><div class="module">
-<div class="module-title">✍️ Glam Script2Cash</div>
-Write scripts for content creators<br>
-€2 / script
-</div><div class="module">
-<div class="module-title">📱 GlamStatus</div>
-Post like WhatsApp Status, earn per view<br>
-€0.5 / view
-</div><div class="module">
-<div class="module-title">🌙 Glam DarkMode</div>
-Earn extra while Europe is awake<br>
-€2 extra/hr
-</div><div class="module">
-<div class="module-title">🗣️ Glam Lingua</div>
-Teach your local language to Europeans<br>
-€2 / hour
-</div><div class="module">
-<div class="module-title">🍲 Glam Cuisine</div>
-Cook local dishes, earn per recipe shared<br>
-€3 / recipe
-</div><div class="module">
-<div class="module-title">📡 Glam Realtime</div>
-Share your daily vibe and get paid<br>
-₦3,000 / 15min
-</div><div class="module">
-<div class="module-title">🎙️ Glam VoiceVault</div>
-Record opinions and earn royalties<br>
-€2 / listen
-</div><div class="module">
-<div class="module-title">💼 GlamWorks</div>
-Remote work for European companies<br>
-£9 / hour
-</div><div class="module">
-<div class="module-title">🏃 Glam Fitness</div>
-Walk, run, stay active and earn<br>
-₦500 / km
-</div><br><div class="card"><h3 class="gold">
-YOUR PRIVATE NETWORK LINK
-</h3><div class="ref-link" id="refLink">
+<body>
+
+<div class="logo">Glamour</div>
+
+<p class="greeting">Good day,</p>
+
+<h2 class="username" id="welcomeUser">Hi, Member 👋</h2>
+
+<!-- BALANCE -->
+<div class="balance-card">
+<div class="badge">PREMIUM</div>
+<h3>Total Balance</h3>
+<div class="balance">₦14,000.00</div>
+<p>•••• •••• 4782</p>
+</div>
+
+<!-- CURRENCY CONVERTER -->
+<div class="converter-card">
+<div class="badge">💱 CURRENCY TOOL</div>
+
+<h3 class="gold">Naira ⇄ Euro Converter</h3>
+
+<input type="number" id="amount" placeholder="Enter amount">
+
+<select id="type">
+<option value="ngnToEur">Naira → Euro</option>
+<option value="eurToNgn">Euro → Naira</option>
+</select>
+
+<button class="convert-btn" onclick="convertCurrency()">
+Convert Now
+</button>
+
+<div class="result" id="resultText">
+Result will appear here
+</div>
+</div>
+
+<!-- ACTIONS -->
+<div class="actions">
+<a href="activation.html">⚡ Activate</a>
+<a href="activation.html">💸 Withdraw</a>
+<a href="activation.html">📋 History</a>
+</div>
+
+<!-- ACCOUNT -->
+<div class="card">
+<h3 class="gold">🔒 Account Not Activated</h3>
+<br>
+<p>Pay the one-time ₦14,000 fee to unlock all modules and start earning instantly.</p>
+</div>
+
+<h2 class="gold">EARNING MODULES</h2>
+<br>
+
+<div class="module"><div class="module-title">🎥 Glam FaceTime</div>Chat with Europeans, earn per session<br>€2 / hour</div>
+<div class="module"><div class="module-title">✍️ Glam Script2Cash</div>Write scripts for content creators<br>€2 / script</div>
+<div class="module"><div class="module-title">📱 GlamStatus</div>Post like WhatsApp Status, earn per view<br>€0.5 / view</div>
+<div class="module"><div class="module-title">🌙 Glam DarkMode</div>Earn extra while Europe is awake<br>€2 extra/hr</div>
+<div class="module"><div class="module-title">🗣️ Glam Lingua</div>Teach your local language to Europeans<br>€2 / hour</div>
+<div class="module"><div class="module-title">🍲 Glam Cuisine</div>Cook local dishes, earn per recipe shared<br>€3 / recipe</div>
+<div class="module"><div class="module-title">📡 Glam Realtime</div>Share your vibe and get paid<br>₦3,000 / 15min</div>
+<div class="module"><div class="module-title">🎙️ Glam VoiceVault</div>Record opinions and earn royalties<br>€2 / listen</div>
+<div class="module"><div class="module-title">💼 GlamWorks</div>Remote work for European companies<br>£9 / hour</div>
+<div class="module"><div class="module-title">🏃 Glam Fitness</div>Walk, run, stay active and earn<br>₦500 / km</div>
+
+<br>
+
+<div class="card">
+<h3 class="gold">YOUR PRIVATE NETWORK LINK</h3>
+
+<div class="ref-link" id="refLink">
 glamour.app/?ref=member001
-</div><button class="copy-btn" onclick="copyReferral()">
+</div>
+
+<button class="copy-btn" onclick="copyReferral()">
 Copy Referral Link
-</button></div><script>
+</button>
+</div>
 
-const user =
-localStorage.getItem("glamourUser");
-
-const username =
-localStorage.getItem("glamourUsername");
+<script>
+// user data
+const user = localStorage.getItem("glamourUser");
+const username = localStorage.getItem("glamourUsername");
 
 if(user){
-
 document.getElementById("welcomeUser").innerHTML =
 "Hi, " + user + " 👋";
-
 }
 
 if(username){
-
 document.getElementById("refLink").innerHTML =
 "glamour.app/?ref=" + username;
-
 }
 
+// referral copy
 function copyReferral(){
-
 const username =
 localStorage.getItem("glamourUsername") || "member001";
 
-const link =
-"glamour.app/?ref=" + username;
-
-navigator.clipboard.writeText(link);
+navigator.clipboard.writeText(
+"glamour.app/?ref=" + username
+);
 
 alert("Referral link copied successfully!");
-
 }
 
-</script></body>
-</html>
+// currency converter (₦2000 = €1)
+function convertCurrency(){
 
+const amount = parseFloat(document.getElementById("amount").value);
+const type = document.getElementById("type").value;
+
+if(!amount){
+alert("Enter a valid amount");
+return;
+}
+
+const rate = 2000;
+
+let result;
+
+if(type === "ngnToEur"){
+result = "€" + (amount / rate).toFixed(2);
+}else{
+result = "₦" + (amount * rate).toLocaleString();
+}
+
+document.getElementById("resultText").innerHTML = result;
+}
+</script>
+
+</body>
+</html>
