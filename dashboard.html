@@ -136,15 +136,6 @@ border-radius:40px;
 font-weight:700;
 cursor:pointer;
 }
-  
- 
-.live-popup{ position:fixed; left:20px; bottom:20px; background:linear-gradient(135deg,#111,#1a1a1a); border:1px solid rgba(255,215,0,.35); border-radius:16px; padding:14px; max-width:320px; color:#fff; z-index:9999; display:none; box-shadow:0 0 25px rgba(255,215,0,.25); animation:popupShow .5s ease; }
- 
-.live-popup .title{ color:#FFD700; font-weight:700; margin-bottom:4px; }
- 
-.live-popup small{ color:#bbb; }
- 
-@keyframes popupShow{ from{ opacity:0; transform:translateY(40px); } to{ opacity:1; transform:translateY(0); } }
 </style>
 </head>
 
@@ -211,10 +202,9 @@ glamour.app/?ref=member001
 <button class="copy-btn" onclick="copyReferral()">
 Copy Referral Link
 </button>
-</div><div class="live-popup" id="livePopup">
-<div class="title">💰 Recent Earnings</div>
-<div id="popupText"></div>
-</div><script>
+</div>
+
+<script>
 const nairaBalance = 14000;
 const rate = 2000;
 let showingEuro = false;
@@ -273,36 +263,6 @@ navigator.clipboard.writeText(
 
 alert("Referral link copied successfully!");
 }
-  
-/* LIVE EARNINGS POPUP */
- 
-const earnings = [ "Ade earned ₦50,000 from Glam Lingua", "Chioma earned €20 from Glam FaceTime", "Emeka earned ₦15,000 from Glam Fitness", "Mercy earned €18 from Glam Cuisine", "David earned ₦35,000 from Glam Realtime", "Kingsley earned €25 from Glam Works", "Jennifer earned ₦45,000 from Glam Lingua", "Samuel earned €12 from Glam Script2Cash", "Grace earned ₦20,000 from Glam Fitness", "Michael earned €30 from Glam FaceTime", "Esther earned ₦65,000 from Glam Realtime", "Peter earned €40 from Glam Works", "Ruth earned ₦18,000 from Glam Fitness", "Kelvin earned €22 from Glam Cuisine", "Blessing earned ₦55,000 from Glam Lingua", "Victor earned €15 from Glam Script2Cash", "Daniel earned ₦42,000 from Glam Realtime", "Sarah earned €28 from Glam FaceTime", "Precious earned ₦30,000 from Glam Fitness", "Mary earned €35 from Glam Works", "Chinedu earned ₦80,000 from Glam Lingua", "Amaka earned €50 from Glam FaceTime", "Ifeanyi earned ₦27,000 from Glam Realtime", "Gift earned €19 from Glam Cuisine", "Henry earned ₦60,000 from Glam Fitness" ];
- 
-let lastPopup = -1;
- 
-function randomMinutes(){ return Math.floor(Math.random()*25)+1; }
- 
-function showEarningsPopup(){
- 
-let current;
- 
-do{ current = Math.floor(Math.random()*earnings.length); } while(current === lastPopup);
- 
-lastPopup = current;
- 
-document.getElementById("popupText").innerHTML = earnings[current] + "" + randomMinutes() + " minutes ago";
- 
-const popup = document.getElementById("livePopup");
- 
-popup.style.display = "block";
- 
-setTimeout(()=>{ popup.style.display = "none"; },5000);
- 
-const nextDelay = Math.floor(Math.random()*10000)+8000;
- 
-setTimeout(showEarningsPopup,nextDelay); }
- 
-setTimeout(showEarningsPopup,4000); }
 </script>
 
 </body>
