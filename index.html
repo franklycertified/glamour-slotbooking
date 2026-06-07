@@ -10,7 +10,6 @@
 
 <style>
 
-/* ===== RESET ===== */
 *{
 margin:0;
 padding:0;
@@ -25,14 +24,12 @@ color:white;
 overflow-x:hidden;
 }
 
-/* ===== COLORS ===== */
 :root{
 --gold:#FFD700;
 --dark:#111111;
 --card:#161616;
 }
 
-/* ===== HERO ===== */
 .hero{
 min-height:100vh;
 padding:30px 20px;
@@ -80,7 +77,6 @@ color:#d6d6d6;
 margin-bottom:35px;
 }
 
-/* ===== BUTTONS ===== */
 .btns{
 display:flex;
 gap:15px;
@@ -102,14 +98,15 @@ color:black;
 box-shadow:0 0 25px rgba(255,215,0,.4);
 }
 
-.btn-primary:hover{transform:translateY(-3px);}
+.btn-primary:hover{
+transform:translateY(-3px);
+}
 
 .btn-secondary{
 border:2px solid var(--gold);
 color:var(--gold);
 }
 
-/* ===== STATS ===== */
 .stats{
 padding:70px 20px;
 display:grid;
@@ -133,9 +130,10 @@ color:var(--gold);
 margin-bottom:10px;
 }
 
-.stat p{color:#bbb;}
+.stat p{
+color:#bbb;
+}
 
-/* ===== LIVE FEED ===== */
 .live-feed{
 background:#0d0d0d;
 padding:18px;
@@ -157,7 +155,6 @@ font-size:15px;
 100%{transform:translateX(-100%)}
 }
 
-/* ===== SECTIONS ===== */
 .section-title{
 text-align:center;
 font-size:38px;
@@ -183,22 +180,28 @@ border-radius:20px;
 border:1px solid rgba(255,215,0,.15);
 }
 
-.card h3{color:var(--gold);margin-bottom:15px;}
-.card p{color:#cfcfcf;line-height:1.8;}
+.card h3{
+color:var(--gold);
+margin-bottom:15px;
+}
 
-/* ===== RESPONSIVE ===== */
+.card p{
+color:#cfcfcf;
+line-height:1.8;
+}
+
 @media(max-width:768px){
 .hero h1{font-size:32px;}
 .hero p{font-size:15px;}
 .logo{font-size:24px;}
 }
 
-/* ===== FLOATING POPUP ===== */
+/* ===== FLOATING MESSAGE ===== */
 .live-popup{
 position:fixed;
 left:20px;
 bottom:20px;
-width:300px;
+width:320px;
 background:linear-gradient(135deg,#111,#1a1a1a);
 border:1px solid rgba(255,215,0,.25);
 border-radius:18px;
@@ -231,7 +234,7 @@ to{opacity:1;transform:translateY(0);}
 
 <body>
 
-<!-- FLOATING POPUP -->
+<!-- FLOATING MESSAGE -->
 <div class="live-popup" id="livePopup">
   <div class="live-title">🔥 Recent Activations</div>
   <div id="popupMessage"></div>
@@ -240,22 +243,28 @@ to{opacity:1;transform:translateY(0);}
 
 <!-- HERO -->
 <section class="hero">
+
 <div class="logo">
 💎 GLAMOUR REGISTRATION
 <span>PREMIUM MEMBER PLATFORM</span>
 </div>
 
-<h1>Turn Your Daily Activities Into <span class="gold">Opportunities</span></h1>
+<h1>
+Turn Your Daily Activities Into
+<span class="gold">Opportunities</span>
+</h1>
 
-<p>Create your account, activate your membership, connect with people around the world, and access premium platform features.</p>
+<p>
+Create your account, activate your membership, connect with people around the world, and access premium platform features.
+</p>
 
 <div class="btns">
 <a href="register.html" class="btn btn-primary">CREATE ACCOUNT</a>
 <a href="login.html" class="btn btn-secondary">LOGIN</a>
 </div>
+
 </section>
 
-<!-- STATS -->
 <section class="stats">
 <div class="stat"><h2>5,000+</h2><p>Registered Members</p></div>
 <div class="stat"><h2>2,500+</h2><p>Activated Accounts</p></div>
@@ -263,29 +272,25 @@ to{opacity:1;transform:translateY(0);}
 <div class="stat"><h2>24/7</h2><p>Support Access</p></div>
 </section>
 
-<!-- LIVE FEED -->
 <div class="live-feed">
 <div class="ticker">
-Chinedu A. • Joined Glamour • Amina B. • Joined Glamour • David O. • Joined Glamour • Grace N. • Joined Glamour • Michael E. • Joined Glamour •
+Chinedu A. • Joined Glamour Registration • Amina B. • Joined Glamour Registration • David O. • Joined Glamour Registration • Grace N. • Joined Glamour Registration • Michael E. • Joined Glamour Registration •
 </div>
 </div>
 
-<!-- WHY SECTION -->
 <section class="why">
 <h2 class="section-title">Why Choose <span class="gold">Glamour?</span></h2>
 
 <div class="why-grid">
-<div class="card"><h3>📱 Mobile Friendly</h3><p>Access from any device.</p></div>
+<div class="card"><h3>📱 Mobile Friendly</h3><p>Access your account from any device.</p></div>
 <div class="card"><h3>⚡ Fast Activation</h3><p>Simple onboarding process.</p></div>
 <div class="card"><h3>🔒 Secure Access</h3><p>Protected dashboard system.</p></div>
 <div class="card"><h3>💬 WhatsApp Support</h3><p>Instant help available.</p></div>
 </div>
 </section>
 
-<!-- FOOTER -->
-<footer style="background:#0a0a0a;padding:40px;text-align:center;border-top:1px solid rgba(255,215,0,.15);">
+<footer style="background:#0a0a0a;padding:40px;text-align:center;">
 <h3 style="color:#FFD700;">💎 GLAMOUR REGISTRATION</h3>
-<p style="color:#aaa;">Premium Member Platform</p>
 <p style="color:#666;">© 2026 Glamour Registration</p>
 </footer>
 
@@ -297,7 +302,11 @@ const activations=[
 "David from Port Harcourt activated account",
 "Grace from Enugu upgraded membership",
 "Michael from Benin joined Glamour",
-"Sarah from Owerri activated account"
+"Sarah from Owerri activated account",
+"Emmanuel from Uyo upgraded Premium",
+"Esther from Asaba joined Glamour",
+"Victor from Aba activated account",
+"Mercy from Warri upgraded membership"
 ];
 
 function showActivation(){
@@ -307,7 +316,7 @@ document.getElementById("popupTime").textContent =
 (Math.floor(Math.random()*30)+1)+" minutes ago";
 
 const box = document.getElementById("livePopup");
-box.style.display="block";
+box.style.display = "block";
 
 setTimeout(()=>{box.style.display="none"},5000);
 }
@@ -317,4 +326,4 @@ setInterval(showActivation,10000);
 </script>
 
 </body>
-</html>
+  </html>
