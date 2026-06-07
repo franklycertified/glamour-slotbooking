@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Glamour Dashboard</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -19,6 +20,7 @@ color:white;
 padding:20px;
 }
 
+/* HEADER */
 .logo{
 font-size:34px;
 font-weight:800;
@@ -37,6 +39,7 @@ font-weight:700;
 margin-bottom:20px;
 }
 
+/* BALANCE */
 .balance-card{
 background:linear-gradient(135deg,#FFD700,#D4AF37);
 color:black;
@@ -74,6 +77,7 @@ font-weight:600;
 cursor:pointer;
 }
 
+/* ACTIONS */
 .actions{
 display:flex;
 gap:10px;
@@ -92,6 +96,7 @@ border-radius:15px;
 font-weight:600;
 }
 
+/* CARDS */
 .card{
 background:#151515;
 padding:20px;
@@ -104,6 +109,7 @@ border:1px solid rgba(255,215,0,.1);
 color:#FFD700;
 }
 
+/* MODULES */
 .module{
 background:#151515;
 padding:15px;
@@ -136,7 +142,9 @@ border-radius:40px;
 font-weight:700;
 cursor:pointer;
 }
-  .live-popup{
+
+/* ===== LIVE POPUP ===== */
+.live-popup{
 position:fixed;
 left:20px;
 bottom:20px;
@@ -150,58 +158,29 @@ display:none;
 box-shadow:0 0 25px rgba(255,215,0,.25);
 animation:slideUp .5s ease;
 }
-.live-title{color:#FFD700;font-weight:700;font-size:13px;}
-.live-time{color:#999;font-size:12px;margin-top:5px;}
+
+.live-title{
+color:#FFD700;
+font-weight:700;
+font-size:13px;
+}
+
+.live-time{
+color:#999;
+font-size:12px;
+margin-top:5px;
+}
+
 @keyframes slideUp{
 from{opacity:0;transform:translateY(40px);}
 to{opacity:1;transform:translateY(0);}
-    }
+}
+
 </style>
 </head>
 
 <body>
-<div class="live-popup" id="livePopup">
-<div class="live-title">💰 Live Earnings</div>
-<div id="popupMessage"></div>
-<div class="live-time" id="popupTime"></div>
-</div>
 
-<script>
-const earnings=[
-"Ade earned ₦50,000 from Glam Lingua",
-"Chioma earned €25 from Glam FaceTime",
-"David earned ₦35,000 from Glam Realtime",
-"Mercy earned €18 from Glam Cuisine",
-"Kingsley earned €30 from Glam Works",
-"Jennifer earned ₦45,000 from Glam Lingua",
-"Samuel earned €15 from Glam Script2Cash",
-"Grace earned ₦20,000 from Glam Fitness",
-"Michael earned €40 from Glam FaceTime",
-"Esther earned ₦65,000 from Glam Realtime",
-"Peter earned €35 from Glam Works",
-"Ruth earned ₦18,000 from Glam Fitness",
-"Kelvin earned €22 from Glam Cuisine",
-"Blessing earned ₦55,000 from Glam Lingua",
-"Victor earned €17 from Glam Script2Cash",
-"Daniel earned ₦42,000 from Glam Realtime",
-"Sarah earned €28 from Glam FaceTime",
-"Precious earned ₦30,000 from Glam Fitness",
-"Mary earned €38 from Glam Works",
-"Emmanuel earned ₦25,000 from Glam Realtime"
-];
-
-function showEarning(){
-const msg=earnings[Math.floor(Math.random()*earnings.length)];
-document.getElementById("popupMessage").innerHTML=msg;
-document.getElementById("popupTime").innerHTML=
-(Math.floor(Math.random()*30)+1)+" minutes ago";
-const box=document.getElementById("livePopup");
-box.style.display="block";
-setTimeout(()=>{box.style.display="none"},5000);
-}
-setTimeout(showEarning,4000);
-setInterval(showEarning,12000);
-</script>
 <div class="logo">Glamour</div>
 
 <p class="greeting">Good day,</p>
@@ -233,28 +212,26 @@ Show in Euro
 <!-- ACCOUNT -->
 <div class="card">
 <h3 class="gold">🔒 Account Not Activated</h3>
-<br>
-<p>Pay the one-time ₦14,000 fee to unlock all modules and start earning instantly.</p>
+<p>Pay the one-time ₦14,000 fee to unlock all modules.</p>
 </div>
 
 <h2 class="gold">EARNING MODULES</h2>
 <br>
 
-<div class="module"><div class="module-title">🎥 Glam FaceTime</div>Chat with Europeans, earn per session<br>€2 / hour</div>
-<div class="module"><div class="module-title">✍️ Glam Script2Cash</div>Write scripts for content creators<br>€2 / script</div>
-<div class="module"><div class="module-title">📱 GlamStatus</div>Post like WhatsApp Status<br>€0.5 / view</div>
-<div class="module"><div class="module-title">🌙 Glam DarkMode</div>Earn extra at night<br>€2 extra/hr</div>
-<div class="module"><div class="module-title">🗣️ Glam Lingua</div>Teach language<br>€2 / hour</div>
-<div class="module"><div class="module-title">🍲 Glam Cuisine</div>Cook & share recipes<br>€3 / recipe</div>
-<div class="module"><div class="module-title">📡 Glam Realtime</div>Daily vibe sharing<br>₦3,000 / 15min</div>
-<div class="module"><div class="module-title">🎙️ Glam VoiceVault</div>Voice earnings<br>€2 / listen</div>
-<div class="module"><div class="module-title">💼 GlamWorks</div>Remote jobs<br>£9 / hour</div>
-<div class="module"><div class="module-title">🏃 Glam Fitness</div>Fitness tracking<br>₦500 / km</div>
+<div class="module"><div class="module-title">🎥 Glam FaceTime</div>€2 / hour</div>
+<div class="module"><div class="module-title">✍️ Glam Script2Cash</div>€2 / script</div>
+<div class="module"><div class="module-title">📱 GlamStatus</div>€0.5 / view</div>
+<div class="module"><div class="module-title">🌙 Glam DarkMode</div>€2 extra/hr</div>
+<div class="module"><div class="module-title">🗣️ Glam Lingua</div>€2 / hour</div>
+<div class="module"><div class="module-title">🍲 Glam Cuisine</div>€3 / recipe</div>
+<div class="module"><div class="module-title">📡 Glam Realtime</div>₦3,000 / 15min</div>
+<div class="module"><div class="module-title">🎙️ Glam VoiceVault</div>€2 / listen</div>
+<div class="module"><div class="module-title">💼 GlamWorks</div>£9 / hour</div>
+<div class="module"><div class="module-title">🏃 Glam Fitness</div>₦500 / km</div>
 
-<br>
-
+<!-- REF LINK -->
 <div class="card">
-<h3 class="gold">YOUR PRIVATE NETWORK LINK</h3>
+<h3 class="gold">YOUR REFERRAL LINK</h3>
 
 <div class="ref-link" id="refLink">
 glamour.app/?ref=member001
@@ -265,65 +242,97 @@ Copy Referral Link
 </button>
 </div>
 
+<!-- LIVE POPUP -->
+<div class="live-popup" id="livePopup">
+<div class="live-title">💰 Live Earnings</div>
+<div id="popupMessage"></div>
+<div class="live-time" id="popupTime"></div>
+</div>
+
 <script>
+
+/* BALANCE */
 const nairaBalance = 14000;
 const rate = 2000;
 let showingEuro = false;
 
+/* USER */
 const user = localStorage.getItem("glamourUser");
 const username = localStorage.getItem("glamourUsername");
 
 if(user){
-document.getElementById("welcomeUser").innerHTML =
-"Hi, " + user + " 👋";
+document.getElementById("welcomeUser").innerText = "Hi, " + user + " 👋";
 }
 
 if(username){
-document.getElementById("refLink").innerHTML =
+document.getElementById("refLink").innerText =
 "glamour.app/?ref=" + username;
 }
 
+/* TOGGLE BALANCE */
 function toggleBalance(){
 
-const display =
-document.getElementById("balanceDisplay");
-
-const btn =
-document.querySelector(".toggle-btn");
+const display = document.getElementById("balanceDisplay");
+const btn = document.querySelector(".toggle-btn");
 
 if(!showingEuro){
 
-let euro = nairaBalance / rate;
-
-display.innerHTML = "€" + euro.toFixed(2);
-
-btn.innerHTML = "Show in Naira";
-
+display.innerText = "€" + (nairaBalance / rate).toFixed(2);
+btn.innerText = "Show in Naira";
 showingEuro = true;
 
 }else{
 
-display.innerHTML = "₦" + nairaBalance.toLocaleString();
-
-btn.innerHTML = "Show in Euro";
-
+display.innerText = "₦" + nairaBalance.toLocaleString();
+btn.innerText = "Show in Euro";
 showingEuro = false;
-
 }
 
 }
 
+/* COPY REF */
 function copyReferral(){
 
-const username =
-localStorage.getItem("glamourUsername") || "member001";
+const username = localStorage.getItem("glamourUsername") || "member001";
 
-navigator.clipboard.writeText(
-"glamour.app/?ref=" + username
-);
+navigator.clipboard.writeText("glamour.app/?ref=" + username);
 
-alert("Referral link copied successfully!");
+alert("Referral link copied!");
 }
+
+/* LIVE EARNINGS POPUP */
+const earnings = [
+"Ade earned ₦50,000 from Glam Lingua",
+"Chioma earned €25 from Glam FaceTime",
+"David earned ₦35,000 from Glam Realtime",
+"Mercy earned €18 from Glam Cuisine",
+"Kingsley earned €30 from Glam Works",
+"Jennifer earned ₦45,000 from Glam Lingua",
+"Samuel earned €15 from Glam Script2Cash",
+"Grace earned ₦20,000 from Glam Fitness",
+"Michael earned €40 from Glam FaceTime"
+];
+
+function showEarning(){
+
+const msg = earnings[Math.floor(Math.random() * earnings.length)];
+
+document.getElementById("popupMessage").innerText = msg;
+
+document.getElementById("popupTime").innerText =
+(Math.floor(Math.random() * 30) + 1) + " minutes ago";
+
+const box = document.getElementById("livePopup");
+box.style.display = "block";
+
+setTimeout(() => {
+box.style.display = "none";
+}, 5000);
+}
+
+setTimeout(showEarning, 3000);
+setInterval(showEarning, 12000);
+
 </script>
 
 </body>
