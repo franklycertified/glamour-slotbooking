@@ -63,6 +63,17 @@ font-weight:800;
 margin:10px 0;
 }
 
+.toggle-btn{
+margin-top:10px;
+padding:10px 16px;
+background:#000;
+color:#FFD700;
+border:1px solid rgba(255,215,0,.4);
+border-radius:30px;
+font-weight:600;
+cursor:pointer;
+}
+
 .actions{
 display:flex;
 gap:10px;
@@ -93,50 +104,6 @@ border:1px solid rgba(255,215,0,.1);
 color:#FFD700;
 }
 
-/* CONVERTER */
-.converter-card{
-background:#151515;
-padding:20px;
-border-radius:18px;
-margin-bottom:20px;
-border:1px solid rgba(255,215,0,.15);
-box-shadow:0 0 20px rgba(255,215,0,.08);
-}
-
-.converter-card input,
-.converter-card select{
-width:100%;
-padding:14px;
-margin-top:10px;
-background:#1c1c1c;
-border:1px solid rgba(255,215,0,.15);
-border-radius:12px;
-color:white;
-font-size:15px;
-outline:none;
-}
-
-.convert-btn{
-width:100%;
-margin-top:12px;
-padding:14px;
-background:linear-gradient(135deg,#FFD700,#D4AF37);
-color:black;
-border:none;
-border-radius:40px;
-font-weight:700;
-cursor:pointer;
-}
-
-.result{
-margin-top:15px;
-text-align:center;
-font-size:20px;
-font-weight:700;
-color:#FFD700;
-}
-
-/* modules */
 .module{
 background:#151515;
 padding:15px;
@@ -183,31 +150,16 @@ cursor:pointer;
 <!-- BALANCE -->
 <div class="balance-card">
 <div class="badge">PREMIUM</div>
+
 <h3>Total Balance</h3>
-<div class="balance">₦14,000.00</div>
-<p>•••• •••• 4782</p>
-</div>
 
-<!-- CURRENCY CONVERTER -->
-<div class="converter-card">
-<div class="badge">💱 CURRENCY TOOL</div>
+<div class="balance" id="balanceDisplay">₦14,000.00</div>
 
-<h3 class="gold">Naira ⇄ Euro Converter</h3>
-
-<input type="number" id="amount" placeholder="Enter amount">
-
-<select id="type">
-<option value="ngnToEur">Naira → Euro</option>
-<option value="eurToNgn">Euro → Naira</option>
-</select>
-
-<button class="convert-btn" onclick="convertCurrency()">
-Convert Now
+<button class="toggle-btn" onclick="toggleBalance()">
+Show in Euro
 </button>
 
-<div class="result" id="resultText">
-Result will appear here
-</div>
+<p>•••• •••• 4782</p>
 </div>
 
 <!-- ACTIONS -->
@@ -229,14 +181,14 @@ Result will appear here
 
 <div class="module"><div class="module-title">🎥 Glam FaceTime</div>Chat with Europeans, earn per session<br>€2 / hour</div>
 <div class="module"><div class="module-title">✍️ Glam Script2Cash</div>Write scripts for content creators<br>€2 / script</div>
-<div class="module"><div class="module-title">📱 GlamStatus</div>Post like WhatsApp Status, earn per view<br>€0.5 / view</div>
-<div class="module"><div class="module-title">🌙 Glam DarkMode</div>Earn extra while Europe is awake<br>€2 extra/hr</div>
-<div class="module"><div class="module-title">🗣️ Glam Lingua</div>Teach your local language to Europeans<br>€2 / hour</div>
-<div class="module"><div class="module-title">🍲 Glam Cuisine</div>Cook local dishes, earn per recipe shared<br>€3 / recipe</div>
-<div class="module"><div class="module-title">📡 Glam Realtime</div>Share your vibe and get paid<br>₦3,000 / 15min</div>
-<div class="module"><div class="module-title">🎙️ Glam VoiceVault</div>Record opinions and earn royalties<br>€2 / listen</div>
-<div class="module"><div class="module-title">💼 GlamWorks</div>Remote work for European companies<br>£9 / hour</div>
-<div class="module"><div class="module-title">🏃 Glam Fitness</div>Walk, run, stay active and earn<br>₦500 / km</div>
+<div class="module"><div class="module-title">📱 GlamStatus</div>Post like WhatsApp Status<br>€0.5 / view</div>
+<div class="module"><div class="module-title">🌙 Glam DarkMode</div>Earn extra at night<br>€2 extra/hr</div>
+<div class="module"><div class="module-title">🗣️ Glam Lingua</div>Teach language<br>€2 / hour</div>
+<div class="module"><div class="module-title">🍲 Glam Cuisine</div>Cook & share recipes<br>€3 / recipe</div>
+<div class="module"><div class="module-title">📡 Glam Realtime</div>Daily vibe sharing<br>₦3,000 / 15min</div>
+<div class="module"><div class="module-title">🎙️ Glam VoiceVault</div>Voice earnings<br>€2 / listen</div>
+<div class="module"><div class="module-title">💼 GlamWorks</div>Remote jobs<br>£9 / hour</div>
+<div class="module"><div class="module-title">🏃 Glam Fitness</div>Fitness tracking<br>₦500 / km</div>
 
 <br>
 
@@ -253,7 +205,10 @@ Copy Referral Link
 </div>
 
 <script>
-// user data
+const nairaBalance = 14000;
+const rate = 2000;
+let showingEuro = false;
+
 const user = localStorage.getItem("glamourUser");
 const username = localStorage.getItem("glamourUsername");
 
@@ -267,8 +222,38 @@ document.getElementById("refLink").innerHTML =
 "glamour.app/?ref=" + username;
 }
 
-// referral copy
+function toggleBalance(){
+
+const display =
+document.getElementById("balanceDisplay");
+
+const btn =
+document.querySelector(".toggle-btn");
+
+if(!showingEuro){
+
+let euro = nairaBalance / rate;
+
+display.innerHTML = "€" + euro.toFixed(2);
+
+btn.innerHTML = "Show in Naira";
+
+showingEuro = true;
+
+}else{
+
+display.innerHTML = "₦" + nairaBalance.toLocaleString();
+
+btn.innerHTML = "Show in Euro";
+
+showingEuro = false;
+
+}
+
+}
+
 function copyReferral(){
+
 const username =
 localStorage.getItem("glamourUsername") || "member001";
 
@@ -277,30 +262,6 @@ navigator.clipboard.writeText(
 );
 
 alert("Referral link copied successfully!");
-}
-
-// currency converter (₦2000 = €1)
-function convertCurrency(){
-
-const amount = parseFloat(document.getElementById("amount").value);
-const type = document.getElementById("type").value;
-
-if(!amount){
-alert("Enter a valid amount");
-return;
-}
-
-const rate = 2000;
-
-let result;
-
-if(type === "ngnToEur"){
-result = "€" + (amount / rate).toFixed(2);
-}else{
-result = "₦" + (amount * rate).toLocaleString();
-}
-
-document.getElementById("resultText").innerHTML = result;
 }
 </script>
 
