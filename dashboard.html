@@ -136,11 +136,72 @@ border-radius:40px;
 font-weight:700;
 cursor:pointer;
 }
+  .live-popup{
+position:fixed;
+left:20px;
+bottom:20px;
+width:320px;
+background:linear-gradient(135deg,#111,#1a1a1a);
+border:1px solid rgba(255,215,0,.25);
+border-radius:18px;
+padding:15px;
+z-index:9999;
+display:none;
+box-shadow:0 0 25px rgba(255,215,0,.25);
+animation:slideUp .5s ease;
+}
+.live-title{color:#FFD700;font-weight:700;font-size:13px;}
+.live-time{color:#999;font-size:12px;margin-top:5px;}
+@keyframes slideUp{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
+    }
 </style>
 </head>
 
 <body>
+<div class="live-popup" id="livePopup">
+<div class="live-title">💰 Live Earnings</div>
+<div id="popupMessage"></div>
+<div class="live-time" id="popupTime"></div>
+</div>
 
+<script>
+const earnings=[
+"Ade earned ₦50,000 from Glam Lingua",
+"Chioma earned €25 from Glam FaceTime",
+"David earned ₦35,000 from Glam Realtime",
+"Mercy earned €18 from Glam Cuisine",
+"Kingsley earned €30 from Glam Works",
+"Jennifer earned ₦45,000 from Glam Lingua",
+"Samuel earned €15 from Glam Script2Cash",
+"Grace earned ₦20,000 from Glam Fitness",
+"Michael earned €40 from Glam FaceTime",
+"Esther earned ₦65,000 from Glam Realtime",
+"Peter earned €35 from Glam Works",
+"Ruth earned ₦18,000 from Glam Fitness",
+"Kelvin earned €22 from Glam Cuisine",
+"Blessing earned ₦55,000 from Glam Lingua",
+"Victor earned €17 from Glam Script2Cash",
+"Daniel earned ₦42,000 from Glam Realtime",
+"Sarah earned €28 from Glam FaceTime",
+"Precious earned ₦30,000 from Glam Fitness",
+"Mary earned €38 from Glam Works",
+"Emmanuel earned ₦25,000 from Glam Realtime"
+];
+
+function showEarning(){
+const msg=earnings[Math.floor(Math.random()*earnings.length)];
+document.getElementById("popupMessage").innerHTML=msg;
+document.getElementById("popupTime").innerHTML=
+(Math.floor(Math.random()*30)+1)+" minutes ago";
+const box=document.getElementById("livePopup");
+box.style.display="block";
+setTimeout(()=>{box.style.display="none"},5000);
+}
+setTimeout(showEarning,4000);
+setInterval(showEarning,12000);
+</script>
 <div class="logo">Glamour</div>
 
 <p class="greeting">Good day,</p>
